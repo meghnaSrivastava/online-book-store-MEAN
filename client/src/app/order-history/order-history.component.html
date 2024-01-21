@@ -1,0 +1,27 @@
+<!-- order-history.component.html -->
+
+<div class="order-history-container">
+    <h2>Order History</h2>
+  
+    <ng-container *ngIf="orders.length === 0; else ordersExist">
+      <div class="no-order-message">
+        <p>No orders available.</p>
+      </div>
+    </ng-container>
+  
+    <ng-template #ordersExist>
+      <div *ngFor="let order of orders" class="order-item">
+        <p>Order ID: {{ order._id }}</p>
+        <p>Date: {{ order.createdAt | date:'short' }}</p>  
+        <div *ngIf="order.books.length > 0">
+          <h3>Books in this order:</h3>
+          <ul>
+            <li *ngFor="let book of order.books">
+              {{ book.title }} by {{ book.author }} 
+            </li>
+          </ul>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+  

@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light header-color">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <span class="icon">📚</span> <span class="logo-title">Online Bookstore</span>
+      <span><i class="fa fa-map-marker location-icon" aria-hidden="true"></i></span><span
+        class="delivery-address">Gartner,
+        Two Horizon, Gurgaon IN 122002</span>
+    </a>
+
+    <div>
+    </div>
+
+    <ul class="navbar-nav pl-2">
+      <li class="nav-item pr-4">
+        <div class="search-bar">
+          <input type="text" [(ngModel)]="searchTerm" (keyup)="searchBook()" class="search-input"
+            placeholder="Search by Title, Author or Genre">
+          <button class="search-button" (click)="searchBook()"><i class="fa fa-search search-icon"
+              aria-hidden="true"></i></button>
+
+        </div>
+      </li>
+
+      <li class="nav-item pr-2" *ngIf="!isAdmin">
+        <a routerLink="/cart">
+          <div>
+            <i class="fa fa-shopping-cart common-icon" aria-hidden="true"></i>
+          </div>
+        </a>
+      </li>
+      <li class="nav-item pl-2">
+        <div class="dropdown">
+          <i (click)="loginCheck()" class="fa fa-user-circle-o common-icon" id="dropdownMenuButton"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a *ngIf="!isLoggedIn" class="dropdown-item" routerLink="/login">Login</a>
+            <a *ngIf="isLoggedIn && !isAdmin" class="dropdown-item" routerLink="/order-history">Orders</a>
+            <a *ngIf="isLoggedIn && isAdmin" class="dropdown-item" routerLink="/book/add">Add New Book</a>
+            <a *ngIf="isLoggedIn" class="dropdown-item" (click)="logout()">Logout</a>
+          </div>
+        </div>
+
+      </li>
+    </ul>
+
+  </div>
+
+</nav>

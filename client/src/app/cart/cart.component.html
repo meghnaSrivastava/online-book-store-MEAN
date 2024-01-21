@@ -1,0 +1,79 @@
+<div class="cart-container">
+  <div class="main-text">
+    <span class="title-text">Your Shopping Cart</span>
+    <span class="cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+  </div>
+
+  <!-- Display different content based on whether the cart is empty or not -->
+  <ng-container *ngIf="cartItems.length === 0; else cartNotEmpty">
+    <div class="empty-cart-message">
+      <p>Your cart is currently empty.</p>
+      <a routerLink="/">Continue Shopping</a>
+    </div>
+  </ng-container>
+  <div>
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="cart-items">
+          <div *ngFor="let item of cartItems">
+            <div class="cart-item">
+              <table width="100%">
+                <tr>
+                  <td width="18%">
+                    <img src="{{item.book.imageUrl}}" alt="{{ item.book.title }}" class="item-image">
+                  </td>
+                  <td class="v-top" width="70%">
+                    <div class="book-title">{{ item.book.title }}</div>
+                    <div><span class="sub-text">Author : </span><span class="main-text">{{ item.book.author }}</span>
+                    </div>
+                    <div><span class="sub-text">Genre : </span><span class="main-text">{{ item.book.genre }}</span>
+                    </div>
+                    <div><span class="sub-text">Rating : </span><span class="main-text">{{ item.book.rating }}</span>
+                    </div>
+                    <div class="estimate-delivery"><span>Estimate delivery in 3-4 business days</span> | <span
+                        (click)="removeFromCart(item)" class="remove">Remove</span></div>
+                  </td>
+                  <td class="v-top p-10">
+                    <span class="dollar-symbol">$</span><span class="price-text">{{ item.book.price }}</span>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+
+        <div class="cart-summary" *ngIf="cartItems.length">
+          <h3>Order Summary</h3>
+          <table width="100%">
+            <tr>
+              <td width="90%"><span class="summary-text-left">Sub Total</span></td>
+              <td width="20%"><span>${{ calculateTotalPrice() }} </span></td>
+            </tr>
+            <tr>
+              <td width="90%"><span class="summary-text-left">Shipping</span></td>
+              <td width="20%"><span>$30</span></td>
+            </tr>
+            <tr>
+              <td width="90%"><span class="summary-text-left">Estimated Tax</span></td>
+              <td width="20%"><span>${{calculateTotalPrice() * 18/100 }}</span></td>
+            </tr>
+
+          </table>
+          <div class="horizontal-line"></div>
+          <table width="100%">
+            <tr>
+              <td width="90%"><span class="summary-text-left">To Pay</span></td>
+              <td width="20%"><span>${{ calculateFinalAmount() }}</span></td>
+            </tr>
+          </table>
+          <button class="btn btn-primary checkout-btn" (click)="checkout()">Proceed To Checkout</button>
+        </div>
+      </div>
+    </div>
+    <ng-template #cartNotEmpty>
+
+
+    </ng-template>
+  </div>

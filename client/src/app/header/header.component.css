@@ -1,0 +1,111 @@
+.navbar-nav .nav-link {
+  font-weight: bold;
+}
+.header-color{
+  background-color: #232b2b;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  padding-left: 44%;
+}
+
+.search-field {
+  width: 300px;
+  margin-right: 10px;
+}
+
+.cart-button,
+.login-button {
+  margin-left: 10px;
+}
+
+.icon {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+.avatar {
+  background-color: #007bff;
+  color: #ffffff;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.dropdown-menu {
+  left: -400% !important;
+  cursor: pointer;
+}
+
+.common-icon {
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.logo-title {
+  color: white;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 0.6;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 2px;
+
+}
+
+.search-bar {
+  display: flex;
+  max-width: 400px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.search-input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 5px 0px 0px 5px; 
+  height: 36px;
+  width: 280px;
+}
+.search-button {
+  background-color: white;
+  color: white;
+  padding-right: 11px;
+  border: none;
+  border-radius: 0px 5px 5px 0px;
+  cursor: pointer;
+  height: 36px;
+}
+
+.search-input:focus {
+  box-shadow: none; /* Disable default focus box-shadow */
+}
+
+.search-icon {
+  color: #232b2b;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.location-icon {
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  padding-left: 20px;
+ 
+}
+
+.delivery-address{
+  
+  padding-left: 5px;
+  font-size:10px;
+  color: #ddd
+
+}

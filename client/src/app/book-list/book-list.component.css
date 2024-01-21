@@ -1,0 +1,194 @@
+.book-list-container {
+  max-height: 600px;
+  /* overflow-y: auto; */
+  position: relative;
+}
+
+.featured-books-heading {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.book-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: transform 0.2s;
+  /* height: 300px; */
+}
+
+.book-card:hover {
+  border: 1px solid  #819898;
+  cursor: pointer;
+}
+
+.book-image {
+  max-width: 100%;
+  height: auto;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.book-details {
+  padding: 10px;
+}
+
+.book-title {
+  color: #0F1111;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
+  text-decoration: none;
+}
+
+.author-by{
+  font-size: 14px;
+ line-height: 20px;
+}
+
+.author-text{
+ color: #007185;
+ font-size: 14px;
+ line-height: 20px;
+
+}
+
+.price-text {
+  font-size: 28px;
+}
+
+.add-to-cart-btn {
+  margin-top: 2px;
+  background-color: #464b4b;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-book-btn{
+  background-color: #232b2b;
+  width: 78%;
+}
+
+.delete-book-btn{
+  margin-left: 4px;
+  width: 20%;
+  background-color: #464b4b;
+}
+.add-book-btn {
+  margin-top: 2px;
+  background-color: #464b4b;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 80%;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #232b2b;
+}
+
+
+.col-md-4 {
+  flex: 0 0 33.333%;
+  max-width: 25%;
+}
+
+.add-new-book-btn {
+  position: absolute;
+  top: 10px;
+  right: 29px;
+}
+
+.custom-margin {
+  margin-right: 20px;
+}
+
+.custom-width {
+  width: 100px;
+}
+
+.checked {
+  color: orange;
+}
+
+.dollar-symbol{
+  top: -0.60em;
+  font-size: 13px;
+  position: relative;
+}
+
+.original-price{
+  
+    letter-spacing: -0.408px;
+    color: #666666;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 0 7px;
+    text-decoration: line-through;
+}
+
+.discount-percentage {
+
+    letter-spacing: -0.408px;
+    color: #43A047;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    font-family: "Poppins", sans-serif;
+
+}
+
+.cover-type{
+  color: #007185;
+  font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    text-decoration: none;
+    letter-spacing: 1px;
+
+
+}
+
+.img-box{
+  background-color: #f2f2f2;
+}
+
+.best-seller{
+  position: relative;
+  background-color: #E67A00; 
+  width: 40%;
+  padding: 5px 5px 5px 15px; 
+  border-bottom-right-radius: 40%;
+  border-top-left-radius: 8px;
+  color: white;
+  font-size: 12px;
+}
+
+.no-best-seller{
+  position: relative;
+  background-color: #f2f2f2; 
+  width: 40%;
+  padding: 5px 5px 5px 15px; 
+  border-bottom-right-radius: 40%;
+  color: #f2f2f2;
+  font-size: 12px;
+}
+
+.no-book-message {
+  text-align: center;
+  padding: 50px;
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}

@@ -1,0 +1,58 @@
+<div class="container book-list-container pt-4">
+  <h2 class="featured-books-heading">Featured Books</h2>
+
+  <ng-container *ngIf="books.length === 0;">
+    <div class="no-book-message">
+      <p>No books available.</p>
+    </div>
+  </ng-container>
+
+  <div class="row">
+    <div *ngFor="let book of books" class="col-md-4 mb-4">
+      <div class="card book-card" style="background-color: #fff; height: 100%;">
+        <div class="img-box">
+          <div *ngIf="book.rating > 3" class="best-seller">Best Seller</div>
+          <div *ngIf="book.rating < 4" class="no-best-seller">No Best Seller</div>
+          <img src="{{book.imageUrl}}" class="card-img-top book-image" alt="{{ book.title }}"
+            style="width: 220px; padding-left: 20%; padding-top: 10px; padding-bottom: 10px; height: 260px;">
+        </div>
+        <div class="card-body book-details">
+          <div class="book-title">{{ book.title }}</div>
+          <div><span class="author-by">by </span><span class="author-text">{{ book.author }}</span></div>
+          <div>
+            <span class="fa fa-star" [ngClass]="{'checked': book.rating >= 1}"></span>
+            <span class="fa fa-star" [ngClass]="{'checked': book.rating >= 2}"></span>
+            <span class="fa fa-star" [ngClass]="{'checked': book.rating >= 3}"></span>
+            <span class="fa fa-star" [ngClass]="{'checked': book.rating >= 4}"></span>
+            <span class="fa fa-star" [ngClass]="{'checked': book.rating >= 5}"></span>
+
+          </div>
+          <div class="cover-type">Paperback</div>
+          <div class="pt-2">
+            <span class="dollar-symbol">$</span><span class="price-text">{{book.price}}</span>
+            <span class="original-price">M.R.P: ${{book.price * 2}} </span>
+            <span class="discount-percentage">50% OFF</span>
+          </div>
+
+
+          <div>
+            <!-- Add to Cart button -->
+            <button *ngIf="!isAdmin" (click)="addToCart(book._id)" class="btn add-to-cart-btn" style="width: 100%;">Add
+              to Cart</button>
+          </div>
+
+          <div>
+            <span> <button *ngIf="isAdmin" class="btn add-to-cart-btn edit-book-btn" (click)="editBookPage(book._id)">
+                <i class="fa fa-edit"></i> Edit
+              </button></span>
+            <span> <button *ngIf="isAdmin" (click)="deleteBook(book._id)" class="btn add-to-cart-btn delete-book-btn">
+                <i class="fa fa-trash"></i>
+              </button></span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

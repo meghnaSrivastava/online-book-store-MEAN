@@ -1,0 +1,51 @@
+<div class="container mt-4 bg-light p-4 rounded">
+  <h2 class="mb-4 border-bottom pb-2">{{ formTitle }}</h2>
+  <form (ngSubmit)="onSubmit()" class="border p-4 rounded" #bookForm="ngForm" novalidate>
+    <div class="form-group mb-3">
+      <label for="title" class="fw-bold">Title:</label>
+      <input type="text" class="form-control" id="title" [(ngModel)]="book.title" name="title" required #titleField="ngModel">
+      <div *ngIf="(bookForm.submitted || titleField.touched) && titleField.hasError('required')" class="text-danger">
+        Title is required.
+      </div>
+    </div>
+    <div class="form-group mb-3">
+      <label for="author" class="fw-bold">Author:</label>
+      <input type="text" class="form-control" id="author" [(ngModel)]="book.author" name="author" required #authorField="ngModel">
+      <div *ngIf="(bookForm.submitted || authorField.touched) && authorField.hasError('required')" class="text-danger">
+        Author is required.
+      </div>
+    </div>
+    <div class="form-group mb-3">
+      <label for="genre" class="fw-bold">Genre:</label>
+      <input type="text" class="form-control" id="genre" [(ngModel)]="book.genre" name="genre" required #genreField="ngModel">
+      <div *ngIf="(bookForm.submitted ||  genreField.touched) && genreField.hasError('required')" class="text-danger">
+        Genre is required.
+      </div>
+    </div>
+    <div class="form-group mb-3">
+      <label for="price" class="fw-bold">Price:</label>
+      <input type="number" class="form-control" id="price" [(ngModel)]="book.price" name="price" required #priceField="ngModel">
+      <div *ngIf="(bookForm.submitted || priceField.touched) && priceField.hasError('required')" class="text-danger">
+        Price is required.
+      </div>
+    </div>
+    <div class="form-group mb-3">
+      <label for="rating" class="fw-bold">Rating:</label>
+      <input type="number" class="form-control" id="rating" [(ngModel)]="book.rating" name="rating" required min="1" max="5" #ratingField="ngModel">
+      <div *ngIf="(bookForm.submitted || ratingField.touched) && ratingField.hasError('required')" class="text-danger">
+        Rating is required between 1-5.
+      </div>
+    </div>
+    <div class="form-group mb-3">
+      <label for="imageUrl" class="fw-bold">Image URL:</label>
+      <input type="url" class="form-control" id="imageUrl" [(ngModel)]="book.imageUrl" name="imageUrl" required pattern="https?://.+">
+      <div *ngIf="(bookForm.submitted || bookForm.controls['imageUrl'].touched) && bookForm.controls['imageUrl'].hasError('required')" class="text-danger">
+        Image URL is required.
+      </div>
+      <div *ngIf="bookForm.controls['imageUrl'].hasError('pattern')" class="text-danger">
+        Please enter a valid URL.
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary w-100 save-button" [disabled]="bookForm.invalid"> {{ submitBtnText }}</button>
+  </form>
+</div>
