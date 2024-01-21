@@ -1,0 +1,23 @@
+# Node.js (Server)
+server/node_modules/
+npm-debug.log
+yarn-error.log
+
+# Angular (Client)
+/client/dist/
+/client/e2e/coverage/
+/client/node_modules/
+/client/src/**/*.d.ts
+
+# IDE and editor files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+
+# System Files
+.DS_Store
+Thumbs.db
